@@ -6,12 +6,7 @@
 	$db_name = 'spaceracerdatabase';
 
 	//Initializes MySQLi
-	$conn = mysqli_init();
-
-	mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
-
-	// Establish the connection
-	mysqli_real_connect($conn, 'spaceracerserver.mysql.database.azure.com', 'Spaceraceradmin@spaceracerserver', 'LostAnderson89e', 'spaceracerdatabase', 3306, NULL, MYSQLI_CLIENT_SSL);
+	$conn = mysqli_connect('spaceracerserver.mysql.database.azure.com', 'Spaceraceradmin@spaceracerserver', 'LostAnderson89e', 'spaceracerdatabase');
 
 	//If connection failed, show the error
 	if (mysqli_connect_errno($conn))
