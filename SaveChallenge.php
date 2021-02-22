@@ -7,8 +7,7 @@
 	//check that the connection was successful if not return error code 1
 	if(mysqli_connect_errno())
 	{
-		echo "1: Connection failed"; //error code #1 = connection failed
-		exit();
+		die('Failed to connect to MySQL: '.mysqli_connect_error());
 	}
 
 	//get the information passed from the unity c# script and store them as variables for accessability

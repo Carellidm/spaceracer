@@ -9,9 +9,9 @@
 	$conn = mysqli_connect('spaceracerserver.mysql.database.azure.com', 'Spaceraceradmin@spaceracerserver', 'LostAnderson89e', 'spaceracerdatabase');
 
 	//If connection failed, show the error
-	if (mysqli_connect_errno($conn))
+	if (mysqli_connect_errno())
 	{
-	    die('1'); //die('Failed to connect to MySQL: '.mysqli_connect_error());
+	    die('Failed to connect to MySQL: '.mysqli_connect_error());
 	}
 
 	//get the information passed from the unity c# script and store them as variables for accessability
