@@ -3,7 +3,7 @@
 	$host = 'spaceracerserver.mysql.database.azure.com';
 	$username = 'Spaceraceradmin@spaceracerserver';
 	$password = 'LostAnderson89e';
-	$db_name = 'spaceracer';
+	$db_name = 'spaceracerdatabase';
 
 	//Initializes MySQLi
 	$conn = mysqli_init();
