@@ -18,7 +18,7 @@
 	//If connection failed, show the error
 	if (mysqli_connect_errno($conn))
 	{
-	    die('Failed to connect to MySQL: '.mysqli_connect_error());
+	    die('1'); //die('Failed to connect to MySQL: '.mysqli_connect_error());
 	}
 
 	//get the information passed from the unity c# script and store them as variables for accessability
