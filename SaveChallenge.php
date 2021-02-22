@@ -2,13 +2,18 @@
 
 	//create a connection to data base by creating a variable to stroe that connection in 
 	//                      location, username, password, database name 
-	$con = mysqli_connect('localhost', 'root', 'root', 'spaceracer');	
+	$host = 'spaceracer.database.windows.net';
+	$username = 'carellidm';
+	$password = 'LostAnderson89e';
+	$db_name = 'spaceracer';
 
-	//check that the connection was successful if not return error code 1
-	if(mysqli_connect_errno())
+	//Initializes MySQLi
+	$conn = mysqli_connect($host, $username, $username, $db_name);	
+
+	//If connection failed, show the error
+	if (mysqli_connect_errno($conn))
 	{
-		echo "1: Connection failed"; //error code #1 = connection failed
-		exit();
+	    die('1');
 	}
 
 	//get the information passed from the unity c# script and store them as variables for accessability
