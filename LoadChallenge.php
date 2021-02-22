@@ -1,22 +1,13 @@
 <?php
 
-	$host = 'spaceracerserver.mysql.database.azure.com';
-	$username = 'Spaceraceradmin@spaceracerserver';
-	$password = 'LostAnderson89e';
-	$db_name = 'spaceracerdatabase';
+	//create a connection to data base by creating a variable to stroe that connection in 
+	//                      location, username, password, database name 
+	$conn = mysqli_connect('spaceracerserver.mysql.database.azure.com', 'Spaceraceradmin@spaceracerserver', 'LostAnderson89e', 'spaceracerdatabase');
 
-	//Initializes MySQLi
-	$conn = mysqli_init();
-
-	mysqli_ssl_set($conn,NULL,NULL, "Assets/Resources/Scripts/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
-
-	// Establish the connection
-	mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306, NULL, MYSQLI_CLIENT_SSL);
-
-	//If connection failed, show the error
-	if (mysqli_connect_errno($conn))
+	//check that the connection was successful if not return error code 1
+	if(mysqli_connect_errno())
 	{
-	    die('Failed to connect to MySQL: '.mysqli_connect_error());
+		die('Failed to connect to MySQL: '.mysqli_connect_error());
 	}
 
 	//get the information passed from the unity c# script and store them as variables for accessability
